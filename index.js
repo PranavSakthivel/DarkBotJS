@@ -29,10 +29,14 @@ client.on('message', message => {
     const command = client.commands.get(commandName);
 
     if (command.args && !args.length) {
-        let reply = `There were no arguments provided, ${message.author}.`;
-
+        //let reply = `There were no arguments provided, ${message.author}.`;
+		const reply = new Discord.MessageEmbed()
+		.setColor('#FF0000')
+		.setTitle('That\'s not how you use that,')
+		.setDescription(message.author);
         if (command.usage) {
-            reply += `\nCommand instructions: \`${prefix}${command.name} ${command.usage}\``;
+			reply.addField('Usage:', prefix + command.name + ' ' + command.usage, false);
+			//reply += `\nCommand instructions: \`${prefix}${command.name} ${command.usage}\``;
         }
 
         return message.channel.send(reply);
