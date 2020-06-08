@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const MersenneTwister = require('mersenne-twister');
 const generator = new MersenneTwister();
-
+const author = 'DarkBot Advanced Dice AI';
+const diceLogo = 'https://i.imgur.com/G164YiZ.png';
 module.exports = {
 	name: 'dice',
 	usage: '<number of dice> <number of sides per die>',
@@ -12,7 +13,7 @@ module.exports = {
 			const invalidInputEmbed = new Discord.MessageEmbed()
 			.setColor('#FF0000')
 			.setTitle('Error')
-			.setAuthor('DarkBot Advanced Dice AI', 'https://i.imgur.com/G164YiZ.png')
+			.setAuthor(author, diceLogo)
 			.setDescription('Command usage: <number of dice> <number of sides per die>');
 			return message.channel.send(invalidInputEmbed);
 		}
@@ -21,7 +22,7 @@ module.exports = {
 			const tooManyDiceEmbed = new Discord.MessageEmbed()
 			.setColor('#FF0000')
 			.setTitle('Too many dice!')
-			.setAuthor('DarkBot Advanced Dice AI', 'https://i.imgur.com/G164YiZ.png')
+			.setAuthor(author, diceLogo)
 			.setDescription('Are you really trying to roll ' + args[0] + ' dice?');
 			return message.channel.send(tooManyDiceEmbed);
 		}
@@ -30,7 +31,7 @@ module.exports = {
 			const diceNumberTooHigh = new Discord.MessageEmbed()
 			.setColor('#FF0000')
 			.setTitle('Dice number is too high!')
-			.setAuthor('DarkBot Advanced Dice AI', 'https://i.imgur.com/G164YiZ.png')
+			.setAuthor(author, diceLogo)
 			.setDescription('You should try making a die with ' + args[1] + ' sides..');
 			return message.channel.send(diceNumberTooHigh);
 		}
@@ -47,7 +48,7 @@ module.exports = {
 		const diceEmbed = new Discord.MessageEmbed()
 			.setColor('#33CCFF')
 			.setTitle(finalRoll)
-			.setAuthor('DarkBot Advanced Dice AI', 'https://i.imgur.com/G164YiZ.png')
+			.setAuthor(author, diceLogo)
 			.setDescription(roll);
 		message.channel.send(diceEmbed);
 	},

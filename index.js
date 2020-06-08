@@ -1,5 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+
+module.exports = { client };
 const fs = require('fs');
 
 const { prefix, token } = require('./config.json');
@@ -17,6 +19,7 @@ for (const file of commandFiles) {
 }
 
 client.on('message', message => {
+	if (message.content.toLowerCase().includes('honestly') && !message.author.bot) return message.channel.send('**' + 'hOnEsTlY' + '**');
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).split(/ +/);
