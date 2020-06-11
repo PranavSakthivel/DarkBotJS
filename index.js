@@ -47,7 +47,10 @@ client.on('message', message => {
 	}
 	catch (error) {
 		console.error(error);
-		message.reply('Command not found!');
+		message.reply(new Discord.MessageEmbed()
+		.setColor('#FF0000')
+		.setTitle('There was an error running the command,')
+		.setDescription(message.author));
 	}
 
 });

@@ -4,6 +4,7 @@ const generator = new MersenneTwister();
 const author = 'DarkBot Advanced Dice AI';
 const diceLogo = 'https://i.imgur.com/G164YiZ.png';
 const { prefix } = require('../config.json');
+
 module.exports = {
 	name: 'dice',
 	usage: '<number of dice> <number of sides per die> <optional modifier>',
