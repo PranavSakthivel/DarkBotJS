@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const MersenneTwister = require('mersenne-twister');
 const generator = new MersenneTwister();
-const author = 'DarkBot Advanced Dice AI';
+const author = 'Advanced Dice AI';
 const diceLogo = 'https://i.imgur.com/G164YiZ.png';
 const { prefix } = require('../config.json');
 
